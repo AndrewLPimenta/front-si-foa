@@ -121,7 +121,7 @@ const integrantes: Integrante[] = [
     categoria: "Marketing",
   },
   {
-    id: 8,
+    id: 9,
     nome: "Connor",
     cargo: "Diretor de E-sports",
     curso: "Sistemas de Informação",
@@ -131,6 +131,18 @@ const integrantes: Integrante[] = [
     linkedin: "inserir_linkedin",
     bio: "Diretor de E-sports da Atlética, responsável por liderar e organizar as equipes de jogos eletrônicos. Estudante de Sistemas de Informação, ele combina conhecimento técnico com espírito competitivo para planejar campeonatos, promover a integração entre os jogadores e representar a Atlética em torneios universitários.",
     categoria: "Esportes",
+  },
+    {
+    id: 10,
+    nome: "Hugo",
+    cargo: "Diretor de Desenvolvimento de Software",
+    curso: "Sistemas de Informação",
+    imagem: "/perfil-provisorio.png",
+    instagram: "@inserir_instagram",
+    email: "inserir_email@exemplo.com",
+    linkedin: "inserir_linkedin",
+    bio: "Diretor de Desenvolvimento de Software da Atlética, responsável por idealizar, construir e manter as soluções tecnológicas que apoiam as atividades da equipe. Estudante de Sistemas de Informação, ele lidera iniciativas digitais como sites, sistemas internos e automações que otimizam a gestão e a comunicação da Atlética. Seu foco é unir tecnologia e inovação para fortalecer a estrutura digital do grupo.",
+    categoria: "Diretoria",
   },
 ]
 
