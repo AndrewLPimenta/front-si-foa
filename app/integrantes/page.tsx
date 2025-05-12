@@ -120,6 +120,18 @@ const integrantes: Integrante[] = [
     bio: "Responsável por planejar e executar as estratégias de comunicação e marketing da Atlética. Atua na divulgação de eventos, gerenciamento de redes sociais e fortalecimento da imagem da equipe dentro e fora da faculdade.",
     categoria: "Marketing",
   },
+  {
+    id: 8,
+    nome: "Connor",
+    cargo: "Diretor de E-sports",
+    curso: "Sistemas de Informação",
+    imagem: "/perfil-provisorio.png",
+    instagram: "@inserir_instagram",
+    email: "inserir_email@exemplo.com",
+    linkedin: "inserir_linkedin",
+    bio: "Diretor de E-sports da Atlética, responsável por liderar e organizar as equipes de jogos eletrônicos. Estudante de Sistemas de Informação, ele combina conhecimento técnico com espírito competitivo para planejar campeonatos, promover a integração entre os jogadores e representar a Atlética em torneios universitários.",
+    categoria: "Esportes",
+  },
 ]
 
 // Categorias únicas

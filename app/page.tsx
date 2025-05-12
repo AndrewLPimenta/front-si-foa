@@ -303,7 +303,7 @@ export default function Home() {
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           <TestimonialCard
-            quote="A Atlética de Sistemas de Infomração da UniFOA mudou minha experiência universitária. "
+            quote="A Atlética de Sistemas de Informação da UniFOA mudou minha experiência universitária. "
             name="Ana Silva"
             role="Aluna de SI"
             image="/usuario.png"
