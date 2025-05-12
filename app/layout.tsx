@@ -11,7 +11,7 @@ import { CartProvider } from "@/contexts/cart-context"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Atlética SI - FOA",
+  title: "Atlética S.I. - UNIFOA",
   description: "Site oficial da Atlética SI - FOA",
 }
 

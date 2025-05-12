@@ -27,7 +27,7 @@ const produtos: Produto[] = [
     nome: "Caneca Tiranos",
     preco: 35.9,
     imagem: "/caneca-tiranos.png",
-    descricao: "Caneca oficial da Atlética SI - FOA, perfeita para seu café.",
+    descricao: "Caneca oficial da Atlética, perfeita para seus momentos mais importantes na universidade.",
     categoria: "Acessórios",
     destaque: true,
   },
@@ -36,7 +36,7 @@ const produtos: Produto[] = [
     nome: "Tiranos Basic - Branca",
     preco: 89.9,
     imagem: "/camisa-branca.png",
-    descricao: "Blusa preta com logo da Atlética SI - FOA.",
+    descricao: "A Tiranos Basic é a peça essencial para quem busca estilo e conforto no dia a dia. Com design minimalista e elegante, essa blusa é feita com tecido de alta qualidade, oferecendo caimento leve e toque macio. Ideal para compor looks casuais ou representar a Atlética com orgulho em qualquer ocasião.",
     categoria: "Vestuário",
   },
   {
@@ -44,7 +44,7 @@ const produtos: Produto[] = [
     nome: "Tiranos Basic - Preta",
     preco: 89.9,
     imagem: "/camisa-preta.png",
-    descricao: "Blusa branca com logo da Atlética SI - FOA.",
+    descricao: "A Tiranos Basic é a peça essencial para quem busca estilo e conforto no dia a dia. Com design minimalista e elegante, essa blusa é feita com tecido de alta qualidade, oferecendo caimento leve e toque macio. Ideal para compor looks casuais ou representar a Atlética com orgulho em qualquer ocasião.",
     categoria: "Vestuário",
   },
   {
@@ -52,7 +52,7 @@ const produtos: Produto[] = [
     nome: "Casaco Tiranos",
     preco: 149.9,
     imagem: "/casaco.png",
-    descricao: "Casaco oficial da Atlética SI - FOA para os dias frios.",
+    descricao: "O Casaco Tiranos é o item essencial para quem quer se manter aquecido com estilo e atitude. Produzido com materiais de alta qualidade, ele oferece conforto térmico e resistência, ideal para os dias frios e para mostrar o seu orgulho pela Atlética em qualquer lugar. Com visual marcante e design moderno, é perfeito para completar o look da galera S.I.",
     categoria: "Vestuário",
     destaque: true,
   },
@@ -61,7 +61,7 @@ const produtos: Produto[] = [
     nome: "Calça Tiranos",
     preco: 119.9,
     imagem: "/calca.png",
-    descricao: "Calça esportiva com logo da Atlética SI - FOA.",
+    descricao: "A Calça Tiranos combina conforto, estilo e identidade atlética em uma peça versátil para o dia a dia ou atividades esportivas. Com o logo da Atlética estampado, ela é confeccionada em tecido leve e resistente, oferecendo mobilidade e um caimento impecável. Ideal para treinos, eventos ou para vestir a bandeira da Atlética com orgulho onde estiver.",
     categoria: "Vestuário",
   },
   {
@@ -69,7 +69,7 @@ const produtos: Produto[] = [
     nome: "Top Tiranos - Preto",
     preco: 69.9,
     imagem: "/top.png",
-    descricao: "Top feminino esportivo da Atlética SI - FOA.",
+    descricao: "O Top Tiranos foi desenvolvido especialmente para as mulheres da tecnologia que encaram desafios com garra dentro e fora da faculdade. Com design moderno, tecido respirável e excelente sustentação, ele oferece conforto durante os estudos, eventos da Atlética ou nos momentos de treino. Ideal para quem representa a força feminina na TI com estilo e atitude.",
     categoria: "Vestuário",
   }
 ]

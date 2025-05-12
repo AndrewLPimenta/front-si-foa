@@ -53,7 +53,7 @@ export default function Home() {
               className="text-center lg:text-left"
             >
               <div className="inline-block px-3 py-1 mb-6 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
-                Bem-vindo à Atlética de Sistemas de Informação da UniFoa.
+                Bem-vindo à Atlética de Sistemas de Informação da UniFOA.
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 A união do <span className="gradient-text">esporte</span>,{" "}
