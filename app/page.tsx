@@ -329,7 +329,7 @@ export default function Home() {
       {/* CTA */}
       <section className="relative overflow-hidden py-20 md:py-28">
         <div className="absolute inset-0 bg-gradient-to-br from-secondary to-accent opacity-90 dark:opacity-80"></div>
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=1000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div className="absolute inset-0 bg-[url('/Emblema.png')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
