@@ -20,32 +20,21 @@ export default function Header() {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen)
-    // Prevent scrolling when menu is open
-    if (!isMenuOpen) {
-      document.body.style.overflow = "hidden"
-    } else {
-      document.body.style.overflow = "auto"
-    }
+    document.body.style.overflow = !isMenuOpen ? "hidden" : "auto"
   }
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScrolled(true)
-      } else {
-        setScrolled(false)
-      }
+      setScrolled(window.scrollY > 10)
     }
 
     window.addEventListener("scroll", handleScroll)
     return () => {
       window.removeEventListener("scroll", handleScroll)
-      // Reset overflow when component unmounts
       document.body.style.overflow = "auto"
     }
   }, [])
 
-  // Close menu when window is resized to desktop size
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 768 && isMenuOpen) {
@@ -55,9 +44,7 @@ export default function Header() {
     }
 
     window.addEventListener("resize", handleResize)
-    return () => {
-      window.removeEventListener("resize", handleResize)
-    }
+    return () => window.removeEventListener("resize", handleResize)
   }, [isMenuOpen])
 
   return (
@@ -78,17 +65,14 @@ export default function Header() {
               transition={{ duration: 0.5 }}
               className="flex items-center"
             >
-
-            <img src="/logo-header.png" alt="Logo" className="h-8 mr-2" /> {/* Coloque o caminho correto da logo */}
-
+              <img src="/logo-header.png" alt="Logo" className="h-8 mr-3" />
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Atlética SI - FOA
+                Atlética S.I. - UniFOA
               </span>
             </motion.div>
           </Link>
 
           <div className="flex items-center gap-2">
-            {/* Cart Icon */}
             <Link href="/carrinho">
               <Button variant="ghost" size="icon" className="relative" aria-label="Carrinho de compras">
                 <ShoppingCart className="h-5 w-5" />
@@ -105,7 +89,6 @@ export default function Header() {
 
             <ThemeToggle />
 
-            {/* Mobile menu button */}
             <Button
               variant="ghost"
               size="icon"
@@ -117,33 +100,20 @@ export default function Header() {
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </Button>
 
-            {/* Desktop Navigation */}
             <nav className="hidden md:flex space-x-1">
-              <NavLink href="/" isActive={pathname === "/"}>
-                Home
-              </NavLink>
-              <NavLink href="/produtos" isActive={pathname === "/produtos"}>
-                Produtos
-              </NavLink>
-              <NavLink href="/eventos" isActive={pathname === "/eventos" || pathname.startsWith("/eventos/")}>
-                Eventos
-              </NavLink>
-              <NavLink href="/integrantes" isActive={pathname === "/integrantes"}>
-                Integrantes
-              </NavLink>
-              <NavLink href="/carrinho" isActive={pathname === "/carrinho"}>
-                Carrinho
-              </NavLink>
+              <NavLink href="/" isActive={pathname === "/"}>Home</NavLink>
+              <NavLink href="/produtos" isActive={pathname === "/produtos"}>Produtos</NavLink>
+              <NavLink href="/eventos" isActive={pathname === "/eventos" || pathname.startsWith("/eventos/")}>Eventos</NavLink>
+              <NavLink href="/integrantes" isActive={pathname === "/integrantes"}>Integrantes</NavLink>
+              <NavLink href="/carrinho" isActive={pathname === "/carrinho"}>Carrinho</NavLink>
             </nav>
           </div>
         </div>
       </div>
 
-      {/* Mobile Navigation - Slide from right */}
       <AnimatePresence>
         {isMenuOpen && (
           <>
-            {/* Backdrop overlay */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -154,7 +124,6 @@ export default function Header() {
               aria-hidden="true"
             />
 
-            {/* Slide-in menu */}
             <motion.div
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
@@ -171,33 +140,12 @@ export default function Header() {
                 </div>
 
                 <nav className="flex-1 py-4">
-                  <MobileNavLink href="/" onClick={toggleMenu} isActive={pathname === "/"}>
-                    Home
-                  </MobileNavLink>
-                  <MobileNavLink href="/produtos" onClick={toggleMenu} isActive={pathname === "/produtos"}>
-                    Produtos
-                  </MobileNavLink>
-                  <MobileNavLink
-                    href="/eventos"
-                    onClick={toggleMenu}
-                    isActive={pathname === "/eventos" || pathname.startsWith("/eventos/")}
-                  >
-                    Eventos
-                  </MobileNavLink>
-                  <MobileNavLink href="/integrantes" onClick={toggleMenu} isActive={pathname === "/integrantes"}>
-                    Integrantes
-                  </MobileNavLink>
-                  <MobileNavLink href="/carrinho" onClick={toggleMenu} isActive={pathname === "/carrinho"}>
-                    Carrinho {totalItems > 0 && `(${totalItems})`}
-                  </MobileNavLink>
+                  <MobileNavLink href="/" onClick={toggleMenu} isActive={pathname === "/"}>Home</MobileNavLink>
+                  <MobileNavLink href="/produtos" onClick={toggleMenu} isActive={pathname === "/produtos"}>Produtos</MobileNavLink>
+                  <MobileNavLink href="/eventos" onClick={toggleMenu} isActive={pathname === "/eventos" || pathname.startsWith("/eventos/")}>Eventos</MobileNavLink>
+                  <MobileNavLink href="/integrantes" onClick={toggleMenu} isActive={pathname === "/integrantes"}>Integrantes</MobileNavLink>
+                  <MobileNavLink href="/carrinho" onClick={toggleMenu} isActive={pathname === "/carrinho"}>Carrinho</MobileNavLink>
                 </nav>
-
-                <div className="p-4 border-t border-border mt-auto">
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-muted-foreground">Alterar tema</span>
-                    <ThemeToggle />
-                  </div>
-                </div>
               </div>
             </motion.div>
           </>
@@ -207,37 +155,12 @@ export default function Header() {
   )
 }
 
-function NavLink({ href, isActive, children }: { href: string; isActive: boolean; children: React.ReactNode }) {
-  return (
-    <Link
-      href={href}
-      className={cn(
-        "px-4 py-2 rounded-full relative transition-all duration-300 font-medium",
-        isActive
-          ? "text-foreground"
-          : "text-foreground/60 hover:text-foreground hover:bg-muted/50 dark:hover:bg-muted/30",
-      )}
-    >
-      {children}
-      {isActive && (
-        <motion.span
-          layoutId="activeNavIndicator"
-          className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-secondary rounded-full"
-          transition={{ type: "spring", stiffness: 380, damping: 30 }}
-        />
-      )}
-    </Link>
-  )
-}
-
-function MobileNavLink({
+function NavLink({
   href,
-  onClick,
   isActive,
   children,
 }: {
   href: string
-  onClick: () => void
   isActive: boolean
   children: React.ReactNode
 }) {
@@ -245,15 +168,41 @@ function MobileNavLink({
     <Link
       href={href}
       className={cn(
-        "flex items-center justify-between px-6 py-4 transition-all duration-300",
+        "px-3 py-2 rounded-md text-sm font-medium transition-colors",
         isActive
-          ? "bg-muted/50 text-foreground font-medium border-r-4 border-secondary"
-          : "text-foreground/70 hover:text-foreground hover:bg-muted/30",
+          ? "text-primary underline underline-offset-4 decoration-2"
+          : "text-muted-foreground hover:text-foreground"
       )}
-      onClick={onClick}
     >
-      <span>{children}</span>
-      <ChevronRight size={18} className={isActive ? "text-secondary" : "text-muted-foreground"} />
+      {children}
+    </Link>
+  )
+}
+
+function MobileNavLink({
+  href,
+  isActive,
+  onClick,
+  children,
+}: {
+  href: string
+  isActive: boolean
+  onClick: () => void
+  children: React.ReactNode
+}) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={cn(
+        "flex items-center px-4 py-3 text-sm font-medium border-b border-border transition-colors",
+        isActive
+          ? "text-primary bg-muted"
+          : "text-muted-foreground hover:text-foreground"
+      )}
+    >
+      <ChevronRight className="h-4 w-4 mr-2" />
+      {children}
     </Link>
   )
 }

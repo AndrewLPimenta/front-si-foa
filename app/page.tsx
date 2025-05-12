@@ -53,7 +53,7 @@ export default function Home() {
               className="text-center lg:text-left"
             >
               <div className="inline-block px-3 py-1 mb-6 rounded-full bg-secondary/10 text-secondary text-sm font-medium">
-                Bem-vindo à Atlética SI - FOA
+                Bem-vindo à Atlética de Sistemas de Informação da UniFoa.
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
                 A união do <span className="gradient-text">esporte</span>,{" "}
@@ -191,10 +191,10 @@ export default function Home() {
               Sobre Nós
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 leading-tight">
-              Conheça a <span className="gradient-text">Atlética SI - FOA</span>
+              Conheça a <span className="gradient-text">Atlética de S.I. - FOA</span>
             </h2>
             <p className="text-base sm:text-lg mb-6 text-muted-foreground leading-relaxed">
-              A Atlética SI - FOA é a associação atlética acadêmica do curso de Sistemas de Informação da UNIFOA.
+              A Atlética S.I. - UniFOA é a associação atlética acadêmica do curso de Sistemas de Informação da UNIFOA.
             </p>
             <p className="text-base sm:text-lg mb-8 text-muted-foreground leading-relaxed">
               Nossa missão é promover a integração dos alunos através de atividades esportivas, eventos sociais e
@@ -240,10 +240,10 @@ export default function Home() {
               Destaques
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold mb-4 leading-tight">
-              O que a <span className="gradient-text">Atlética SI - FOA</span> oferece
+              O que a <span className="gradient-text">Atlética de Sistemas de Informação</span> oferece
             </h2>
             <p className="text-base sm:text-lg max-w-2xl mx-auto text-muted-foreground">
-              Conheça o que a Atlética SI - FOA tem a oferecer para você
+              Conheça o que a Atlética tem a oferecer para você
             </p>
           </motion.div>
 
@@ -251,7 +251,7 @@ export default function Home() {
             <FeatureCard
               image="produtos--oficiais.png"
               title="Produtos Oficiais"
-              description="Conheça nossa linha de produtos oficiais e represente a Atlética SI - FOA com estilo."
+              description="Conheça nossa linha de produtos oficiais e represente a Atlética com estilo."
               link="/produtos"
               linkText="Ver produtos"
               delay={0}
@@ -271,7 +271,7 @@ export default function Home() {
             <FeatureCard
               image="/time.png"
               title="Nossa Equipe"
-              description="Conheça os integrantes que fazem a Atlética SI - FOA acontecer."
+              description="Conheça os integrantes que fazem a Atlética de S.I. acontecer."
               link="/integrantes"
               linkText="Ver integrantes"
               delay={0.2}
@@ -297,13 +297,13 @@ export default function Home() {
             O que nossos <span className="gradient-text">membros</span> dizem
           </h2>
           <p className="text-base sm:text-lg max-w-2xl mx-auto text-muted-foreground">
-            Veja o que os alunos e ex-alunos falam sobre a Atlética SI - FOA
+            Veja o que os alunos e ex-alunos falam sobre a Atlética
           </p>
         </motion.div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
           <TestimonialCard
-            quote="A Atlética SI - FOA mudou minha experiência universitária. "
+            quote="A Atlética de Sistemas de Infomração da UniFOA mudou minha experiência universitária. "
             name="Ana Silva"
             role="Aluna de SI"
             image="/usuario.png"
@@ -340,7 +340,7 @@ export default function Home() {
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white">Faça parte da nossa história!</h2>
           <p className="text-lg sm:text-xl max-w-3xl mx-auto mb-8 text-white/90">
-            Participe dos nossos eventos, adquira nossos produtos e junte-se à família Atlética SI - FOA.
+            Participe dos nossos eventos, adquira nossos produtos e junte-se à família da Atlética.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button variant="premium-dark" size="premium" asChild>
