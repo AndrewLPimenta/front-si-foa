@@ -57,7 +57,7 @@ const produtos: Produto[] = [
     destaque: true,
   },
   {
-    id: 5,
+     id: 6,
     nome: "Calça Tiranos",
     preco: 119.9,
     imagem: "/calca.png",
@@ -65,10 +65,10 @@ const produtos: Produto[] = [
     categoria: "Vestuário",
   },
   {
-    id: 6,
-    nome: "Top Feminino Tiranos - Preto",
+   id: 5,
+    nome: "Top Tiranos - Preto",
     preco: 69.9,
-    imagem: "/top-fem.png",
+    imagem: "/top.png",
     descricao: "Top feminino esportivo da Atlética SI - FOA.",
     categoria: "Vestuário",
   }
