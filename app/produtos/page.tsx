@@ -58,7 +58,7 @@ const produtos: Produto[] = [
     destaque: true,
   },
   {
-     id: 6,
+    id: 6,
     nome: "Calça Tiranos",
     preco: 119.9,
     imagem: "/calca.png",
@@ -66,7 +66,7 @@ const produtos: Produto[] = [
     categoria: "Vestuário",
   },
   {
-   id: 5,
+    id: 5,
     nome: "Top Tiranos - Preto",
     preco: 69.9,
     imagem: "/top.png",
@@ -130,11 +130,19 @@ export default function ProdutosPage() {
     })
   }
 
+
+
+
+
+
   return (
     <div>
       {/* Banner da página */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/90 to-secondary/90 dark:from-primary/30 dark:to-secondary/30 text-white py-16 md:py-24">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=1000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+          style={{ backgroundImage: "url('/dino.png')" }}
+        ></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="inline-block px-3 py-1 mb-6 rounded-full bg-white/20 text-white text-sm font-medium">
@@ -189,11 +197,10 @@ export default function ProdutosPage() {
               <button
                 key={categoria}
                 onClick={() => aplicarFiltro(categoria, busca)}
-                className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-all ${
-                  filtroCategoria === categoria
+                className={`px-4 py-2 rounded-full text-sm whitespace-nowrap transition-all ${filtroCategoria === categoria
                     ? "bg-secondary text-white"
                     : "bg-muted/50 text-muted-foreground hover:bg-muted"
-                }`}
+                  }`}
               >
                 {categoria}
               </button>

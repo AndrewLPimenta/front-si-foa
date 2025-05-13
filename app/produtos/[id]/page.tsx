@@ -259,7 +259,10 @@ export default function ProdutoDetalhePage() {
     <div>
       {/* Banner do produto */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/90 to-secondary/90 dark:from-primary/30 dark:to-secondary/30 text-white py-16 md:py-24">
-        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=1000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
+<div
+  className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
+  style={{ backgroundImage: "url('/dino.png')" }}
+></div>
         <div className="container mx-auto px-4 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
