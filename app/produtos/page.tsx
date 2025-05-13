@@ -23,6 +23,7 @@ type Produto = {
 // Lista de produtos
 const produtos: Produto[] = [
   {
+
     id: 1,
     nome: "Caneca Tiranos",
     preco: 35.9,
@@ -133,11 +134,7 @@ export default function ProdutosPage() {
     <div>
       {/* Banner da página */}
       <section className="relative overflow-hidden bg-gradient-to-br from-primary/90 to-secondary/90 dark:from-primary/30 dark:to-secondary/30 text-white py-16 md:py-24">
-        <div
-  className="absolute inset-0 bg-cover bg-center opacity-20 mix-blend-overlay"
-  style={{ backgroundImage: "url('/dino.png')" }}
-></div>
-
+        <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=1000')] bg-cover bg-center opacity-20 mix-blend-overlay"></div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <div className="inline-block px-3 py-1 mb-6 rounded-full bg-white/20 text-white text-sm font-medium">
@@ -279,7 +276,7 @@ export default function ProdutosPage() {
             <h2 className="text-2xl font-bold mb-4 text-primary">Como Adquirir Nossos Produtos</h2>
             <p className="text-muted-foreground mb-8">
               Para adquirir nossos produtos, entre em contato através do nosso Instagram ou WhatsApp. Também realizamos
-              vendas presenciais durante o horário de funcionamento da faculdade.
+              vendas presenciais durante os eventos da faculdade.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="premium" size="premium" asChild>
@@ -325,87 +322,92 @@ function ProductCard({
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="relative h-64 overflow-hidden">
-        <Image
-          src={produto.imagem || "/placeholder.svg"}
-          alt={produto.nome}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-
-        {produto.destaque && (
-          <div className="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
-            Destaque
-          </div>
-        )}
-
-        <button
-          className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/80 dark:bg-black/50 flex items-center justify-center transition-all hover:bg-white dark:hover:bg-black/70"
-          onClick={(e) => {
-            e.stopPropagation()
-            setIsFavorite(!isFavorite)
-            toast({
-              title: isFavorite ? "Removido dos favoritos" : "Adicionado aos favoritos",
-              description: isFavorite
-                ? `${produto.nome} foi removido dos seus favoritos`
-                : `${produto.nome} foi adicionado aos seus favoritos`,
-              duration: 3000,
-            })
-          }}
-          aria-label={isFavorite ? "Remover dos favoritos" : "Adicionar aos favoritos"}
-        >
-          <Heart
-            className={`h-4 w-4 ${isFavorite ? "fill-red-500 text-red-500" : "text-gray-600 dark:text-gray-400"}`}
+      <Link href={`/produtos/${produto.id}`} className="block">
+        <div className="relative h-64 overflow-hidden">
+          <Image
+            src={produto.imagem || "/placeholder.svg"}
+            alt={produto.nome}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-        </button>
 
-        <AnimatePresence>
-          {isHovered && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              transition={{ duration: 0.2 }}
-              className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-center p-4"
-            >
-              <Button
-                variant="premium"
-                className="w-full"
-                size="default"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  onAddToCart()
-                }}
-              >
-                <ShoppingCart className="mr-2 h-4 w-4" />
-                Comprar Agora
-              </Button>
-            </motion.div>
+          {produto.destaque && (
+            <div className="absolute top-4 left-4 bg-secondary text-white text-xs font-bold px-3 py-1 rounded-full">
+              Destaque
+            </div>
           )}
-        </AnimatePresence>
-      </div>
-      <div className="p-6">
-        <div className="flex justify-between items-center mb-2">
-          <h3 className="text-xl font-bold text-primary">{produto.nome}</h3>
-          <span className="text-lg font-bold text-secondary">R$ {produto.preco.toFixed(2).replace(".", ",")}</span>
-        </div>
-        <p className="text-muted-foreground mb-4">{produto.descricao}</p>
-        <div className="flex justify-between items-center">
-          <span className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded-full">{produto.categoria}</span>
-          <Button
-            variant="ghost"
-            size="sm"
-            className="rounded-full"
+
+          <button
+            className="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/80 dark:bg-black/50 flex items-center justify-center transition-all hover:bg-white dark:hover:bg-black/70"
             onClick={(e) => {
+              e.preventDefault()
               e.stopPropagation()
-              onAddToCart()
+              setIsFavorite(!isFavorite)
+              toast({
+                title: isFavorite ? "Removido dos favoritos" : "Adicionado aos favoritos",
+                description: isFavorite
+                  ? `${produto.nome} foi removido dos seus favoritos`
+                  : `${produto.nome} foi adicionado aos seus favoritos`,
+                duration: 3000,
+              })
             }}
+            aria-label={isFavorite ? "Remover dos favoritos" : "Adicionar aos favoritos"}
           >
-            <ShoppingCart className="mr-2 h-4 w-4" />
-            Adicionar
-          </Button>
+            <Heart
+              className={`h-4 w-4 ${isFavorite ? "fill-red-500 text-red-500" : "text-gray-600 dark:text-gray-400"}`}
+            />
+          </button>
+
+          <AnimatePresence>
+            {isHovered && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.2 }}
+                className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent flex items-end justify-center p-4"
+              >
+                <Button
+                  variant="premium"
+                  className="w-full"
+                  size="default"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    onAddToCart()
+                  }}
+                >
+                  <ShoppingCart className="mr-2 h-4 w-4" />
+                  Comprar Agora
+                </Button>
+              </motion.div>
+            )}
+          </AnimatePresence>
         </div>
-      </div>
+        <div className="p-6">
+          <div className="flex justify-between items-center mb-2">
+            <h3 className="text-xl font-bold text-primary">{produto.nome}</h3>
+            <span className="text-lg font-bold text-secondary">R$ {produto.preco.toFixed(2).replace(".", ",")}</span>
+          </div>
+          <p className="text-muted-foreground mb-4">{produto.descricao}</p>
+          <div className="flex justify-between items-center">
+            <span className="text-xs px-2 py-1 bg-secondary/10 text-secondary rounded-full">{produto.categoria}</span>
+            <Button
+              variant="ghost"
+              size="sm"
+              className="rounded-full"
+              onClick={(e) => {
+                e.preventDefault()
+                e.stopPropagation()
+                onAddToCart()
+              }}
+            >
+              <ShoppingCart className="mr-2 h-4 w-4" />
+              Adicionar
+            </Button>
+          </div>
+        </div>
+      </Link>
     </motion.div>
   )
 }
